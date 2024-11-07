@@ -1,14 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 
+  // ทุก route จะมีการ render จาก server
   ssr: true,
 
+  // กำหนดบาง route ให้ render จาก client
   routeRules: {
-    '/backend/dashboard/**': {ssr: false}
+    '/backend/**': { ssr: false }
   },
 
   css: ['~/assets/css/main.css'],
-  
+
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -29,9 +31,6 @@ export default defineNuxtConfig({
     githubUsername: 'no_name',
     githubRepo: 'no_repo'
   },
-
-  compatibilityDate: '2024-04-03',
-  devtools: { enabled: true },
 
   app: {
     head: {
@@ -55,4 +54,7 @@ export default defineNuxtConfig({
       ]
     }
   },
+
+  compatibilityDate: '2024-04-03',
+  devtools: { enabled: true }
 })
